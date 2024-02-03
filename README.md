@@ -41,10 +41,6 @@ get microk8s dashboard
 
     microk8s dashboard-proxy
 
-build docker image
-
-    docker build -t deevscale/principal-db .
-
 
 docker image run
 
