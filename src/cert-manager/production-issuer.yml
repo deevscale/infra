@@ -4,7 +4,7 @@ metadata:
   name: lets-encrypt
 spec:
   acme:
-    email: info@deevscale.com # Change the email here
+    email: example@domain.com
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: lets-encrypt-prod

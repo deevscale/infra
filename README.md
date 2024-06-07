@@ -24,10 +24,18 @@ How to install microk8s: [guide][2]
 
     chmod 777 -R scripts/*     
 
-4. create kubectl alias
+4. install kubectl
 
 
-    alias kubectl='microk8s kubectl'
+    snap install kubectl --classic
+
+5. Configure kubectl ([source][5])
+
+
+    cd ~/.kube
+    microk8s config > config
+    kubectl config use-context microk8s
+
 
 
 ## Useful commands:
@@ -35,7 +43,7 @@ How to install microk8s: [guide][2]
 
 get all microk8s running services
 
-    microk8s kubectl get all --all-namespaces
+    kubectl get all --all-namespaces
 
 get microk8s dashboard
 
@@ -50,3 +58,4 @@ docker image run
 [2]: <https://ubuntu.com/tutorials/install-a-local-kubernetes-with-microk8s>
 [3]: <https://github.com/canonical/microk8s>
 [4]: <https://blog.antosubash.com/posts/deploy-docker-registry-and-postgres-database-in-micro-k8s>
+[5]: <https://anaisurl.com/kubernetes-kubectl-microk8s/>
