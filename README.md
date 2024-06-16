@@ -35,7 +35,8 @@ How to install microk8s: [guide][2]
     cd ~/.kube
     microk8s config > config
     kubectl config use-context microk8s
-
+    kubectl create namespace development
+    kubectl config set-context --current --namespace=development
 
 
 ## Useful commands:
