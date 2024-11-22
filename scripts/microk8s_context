@@ -1,0 +1,1 @@
+(cd ~/.kube && microk8s config > config && kubectl config use-context microk8s && kubectl config set-context --current --namespace=development)

@@ -1,2 +1,3 @@
 #!/bin/bash
 microk8s start
+./microk8s_context

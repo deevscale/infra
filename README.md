@@ -29,14 +29,26 @@ How to install microk8s: [guide][2]
 
     snap install kubectl --classic
 
-5. Configure kubectl ([source][5])
+5. Create namespaces
+
+
+    kubectl create namespace development
+
+6. Configure kubectl ([source][5])
 
 
     cd ~/.kube
     microk8s config > config
     kubectl config use-context microk8s
-    kubectl create namespace development
+    
     kubectl config set-context --current --namespace=development
+
+7. Enable MetalLB ([source][6])
+
+
+    microk8s enable metallb:10.152.1.0
+    kubectl apply -f metallb-custom-address-pool.yml
+
 
 
 ## Useful commands:
@@ -55,8 +67,13 @@ docker image run
 
     sudo docker run -p 5432:5432 -e POSTGRES_PASSWORD=12345 deevscale/principal-db
 
+sh into pod
+
+    kubectl exec -it <pod_name> -- sh
+
 [1]: <https://www.markdownguide.org/basic-syntax/>
 [2]: <https://ubuntu.com/tutorials/install-a-local-kubernetes-with-microk8s>
 [3]: <https://github.com/canonical/microk8s>
 [4]: <https://blog.antosubash.com/posts/deploy-docker-registry-and-postgres-database-in-micro-k8s>
 [5]: <https://anaisurl.com/kubernetes-kubectl-microk8s/>
+[6]: <https://microk8s.io/docs/addon-metallb>

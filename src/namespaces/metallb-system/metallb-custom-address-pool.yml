@@ -1,0 +1,10 @@
+#not working
+
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: metallb-custom-address-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - 10.152.1.1-10.152.1.100

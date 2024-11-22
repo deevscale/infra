@@ -4,4 +4,4 @@ metadata:
   name: postgres-configmap
   namespace: development
 data:
-  database-url: postgres-service
+  database-name: principal-db
