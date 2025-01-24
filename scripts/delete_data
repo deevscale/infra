@@ -1,0 +1,10 @@
+#!/bin/bash
+(cd /home/dom/sources/infra/src/namespaces/development && (
+  kubectl scale --replicas=0 -f deployments/postgres-deployment.yml
+  kubectl delete pvc postgres-volume-claim
+  kubectl delete pv postgres-volume
+  sudo rm -r /data/postgresql
+  kubectl apply -f persistentVolumes/postgres-volume.yml
+  kubectl apply -f persistentVolumes/postgres-volume-claim.yml
+  kubectl apply -f deployments/postgres-deployment.yml
+))
