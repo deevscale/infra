@@ -17,7 +17,7 @@ spec:
         app: postgres
     spec:
       containers:
-        - image: principal-db
+        - image: deevscale/principal-db
           name: postgres
           imagePullPolicy: IfNotPresent
           ports:

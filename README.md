@@ -71,6 +71,10 @@ sh into pod
 
     kubectl exec -it <pod_name> -- sh
 
+watch pods:
+
+    kubectl get pods -n development -w
+
 [1]: <https://www.markdownguide.org/basic-syntax/>
 [2]: <https://ubuntu.com/tutorials/install-a-local-kubernetes-with-microk8s>
 [3]: <https://github.com/canonical/microk8s>
