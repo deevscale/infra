@@ -19,7 +19,7 @@ spec:
       containers:
         - image: deevscale/principal-db
           name: postgres
-          imagePullPolicy: IfNotPresent
+#          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5432
           envFrom:
